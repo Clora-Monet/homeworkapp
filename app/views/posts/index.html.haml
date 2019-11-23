@@ -1,0 +1,25 @@
+.header
+  .header__info
+    .header__info__title
+      Homework App
+    %ul.header__info__user
+      %li.header__info__user--name
+        ユーザーネーム
+      %li.header__info__user--status
+        ログアウト
+.contents
+  .contents__messages
+    .contents__messages__message
+      .contents__messages__message__text
+        ここは仮置きで!!!!!!
+      .contents__messages__message__info
+        .contents__messages__message__info__name
+          ユーザーネーム
+        .contents__messages__message__info__date
+          2019/21/01
+  .contents__form
+    %textarea.contents__form__text{name: "body", placeholder: "文字を入力(25文字以内)", type: "text",}
+    =link_to "#", class: "contents__form__send-btn" do
+      SEND
+  .contents__footer
+    footer
