@@ -1,0 +1,70 @@
+.header {
+  @include square-setting(100px, 100%, $headerColor);
+  position: fixed;
+  z-index: 1;
+  &__info {
+    padding: 0 100px;
+    @include space-between();
+    &__title {
+      line-height: 100px;
+      @include font-setting(#FFFFFF,20px,bold)
+    }
+    &__user {
+      display: flex;
+      line-height: 100px;
+      &--status {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+.contents {
+  @include square-setting(100vh, 100%, $contentsColor);
+  padding-top: 120px;
+  &__messages {
+    @include square-setting(300px, 80%, #FFFFFF);
+    box-shadow: 5px 5px 5px rgba(153, 153, 153, 0.5);
+    margin: 0 auto;
+    &__message {
+      @include space-between();
+      padding: 10px;
+      &__text {
+        @include font-setting(#000000,14px,normal)
+      }
+      &__info {
+        position: relative;
+        bottom: 0;
+        &__name {
+          @include font-setting(#7F7F7F,12px,normal)
+        }
+        &__date {
+          @include font-setting(#7F7F7F,12px,bold)
+        }
+      }
+    }
+  }
+  &__form {
+    @include square-setting(200px, 80%, #FFFFFF);
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgba(153, 153, 153, 0.5);
+    &__text {
+      @include square-setting(100px, 80%, #FFFFFF);
+      margin-top: 10px;
+    }
+    &__send-btn {
+      @include square-setting(50px, 40px, #00FFFF);
+      text-decoration: none;
+      line-height: 50px;
+      margin-top: 20px;
+      padding: 0 40px;
+    }
+  }
+  &__footer {
+    @include font-setting(#7F7F7F,20px,bold);
+    @include square-setting(50px, 50px, null);
+    margin: 20px auto;
+  }
+}
