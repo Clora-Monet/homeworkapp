@@ -2,11 +2,18 @@
   .header__info
     .header__info__title
       Homework App
-    %ul.header__info__user
-      %li.header__info__user--name
-        ユーザーネーム
-      %li.header__info__user--status
-        ログアウト
+    %if user_signed_in?
+      %ul.header__info__user
+        %if user_signed_in?
+          %li.header__info__user--name
+            = current_user.name
+          %li.header__info__user--status
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+        %else
+          %li.header__info__user--status
+            = link_to "新規登録", new_user_registration_path, class: 'post'
+          %li.header__info__user--status
+            = link_to "ログイン", new_user_session_path, 
 .contents
   .contents__messages
     .contents__messages__message
@@ -14,7 +21,7 @@
         ここは仮置きで!!!!!!
       .contents__messages__message__info
         .contents__messages__message__info__name
-          ユーザーネーム
+          = current_user.name
         .contents__messages__message__info__date
           2019/21/01
   .contents__form
