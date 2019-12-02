@@ -1,0 +1,33 @@
+.header
+  .header__info
+    .header__info__title
+      Homework App
+    - if user_signed_in?
+      %ul.header__info__user
+        %li.header__info__user--name
+          = current_user.name
+        %li.header__info__user--status
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+    - else
+      %ul.header__info__user
+        %li.header__info__user--status
+          = link_to "新規登録", new_user_registration_path, class: 'post'
+        %li.header__info__user--status
+          = link_to "ログイン", new_user_session_path
+.contents
+  .contents__messages
+    .contents__messages__message
+      .contents__messages__message__text
+        ここは仮置きで!!!!!!
+      .contents__messages__message__info
+        .contents__messages__message__info__name
+          = current_user.name
+        .contents__messages__message__info__date
+          2019/21/01
+  .contents__form
+    = form_for [@message] do |f|
+      .contents__form__box
+        = f.text_area :content, class: 'contents__form__box__text', placeholder: "文字を入力(25文字以内)"
+        = f.submit 'SEND', class:'contents__form__box__send-btn'
+  .contents__footer
+    footer

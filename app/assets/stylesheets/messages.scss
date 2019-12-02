@@ -19,12 +19,14 @@
   }
 }
 .contents {
-  @include square-setting(100vh, 100%, $contentsColor);
-  padding-top: 120px;
+  @include square-setting(100vh, calc(100% - 200px), $contentsColor);
+  padding: 120px 100px 0px 100px;
+  
   &__messages {
-    @include square-setting(300px, 80%, #FFFFFF);
+    @include square-setting(300px, calc(100% - 60px), #FFFFFF);
     box-shadow: 5px 5px 5px rgba(153, 153, 153, 0.5);
     margin: 0 auto;
+    padding: 10px 30px;
     &__message {
       @include space-between();
       padding: 10px;
@@ -43,23 +45,30 @@
       }
     }
   }
+  #new_message{
+    width: 100%;
+  }
   &__form {
-    @include square-setting(200px, 80%, #FFFFFF);
+    @include square-setting(200px, calc(100% - 80px), #FFFFFF);
+    padding: 10px 40px;
     margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
     box-shadow: 5px 5px 5px rgba(153, 153, 153, 0.5);
-    &__text {
-      @include square-setting(100px, 80%, #FFFFFF);
-      margin-top: 10px;
-    }
-    &__send-btn {
-      @include square-setting(50px, 40px, #00FFFF);
-      text-decoration: none;
-      line-height: 50px;
-      margin-top: 20px;
-      padding: 0 40px;
+    &__box {
+      padding: 10px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__text {
+        @include square-setting(100px, 100%, #FFFFFF);
+        margin: 10px 50px;
+      }
+      &__send-btn {
+        @include square-setting(50px, nill, #00FFFF);
+        text-decoration: none;
+        line-height: 50px;
+        padding: 0 30px;
+      }
     }
   }
   &__footer {
@@ -68,4 +77,3 @@
     margin: 20px auto;
   }
 }
-
